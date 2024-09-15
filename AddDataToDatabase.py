@@ -9,19 +9,19 @@ firebase_admin.initialize_app(cred,{
 ref=db.reference('Students')
 data={
     "yash":{
-        "name":"yash",
+        "name":"yash chafle",
         "major":"computer technology",
         "starting_year":"2022",
-        "attendance":6,
+        "total_attendaancce":6,
         "standing":"F",
         "year":3,
         "last_attendance_time":"2024/9/15 22:38:14"
     },
     "vaishnavi":{
-        "name":"vaishnavi",
+        "name":"vaishnavi jemati",
         "major":"computer technology",
         "starting_year":"2022",
-        "attendance":6,
+        "total_attendaancce":6,
         "standing":"A",
         "year":3,
         "last_attendance_time":"2024/9/15 22:38:14"

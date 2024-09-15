@@ -10,11 +10,11 @@ from firebase_admin import storage
 
 cred = credentials.Certificate("c:/Users/chafl/OneDrive/Desktop/yash/FaceRecognition/faceattendancerealtime-4da6e-firebase-adminsdk-vn6hc-6d1b3a114f.json")
 firebase_admin.initialize_app(cred,{
-    'databaseURL':"https://faceattendancerealtime-4da6e-default-rtdb.firebaseio.com/"
+    'databaseURL':"https://faceattendancerealtime-4da6e-default-rtdb.firebaseio.com/",
     'storageBucket':"faceattendancerealtime-4da6e.appspot.com"
 })
 
-
+bucket = storage.bucket()
 
 
 foldermode='c:/Users/chafl/OneDrive/Desktop/yash/FaceRecognition/images'
@@ -26,6 +26,9 @@ for path in modepathlist:
     imglist.append(cv2.imread(os.path.join(foldermode,path)))
 
     studentids.append(os.path.splitext(path)[0])
+    filename=f'{foldermode}/{path}'
+    blob=bucket.blob(filename)
+    blob.upload_from_filename(filename)
   
   
 def findEncodings(imglist):
